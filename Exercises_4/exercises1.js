@@ -98,17 +98,6 @@ function membatasiNama15Char(input) {
 var array = ['0001', 'Roman Alamsyah', 'Bandar Lampung', '21/08/1989', 'Membaca'];
 dataHandling2(array);
 
-// console.log(splitTanggalLahir(array));
-// console.log(sortTanggalLahir(array));
-// console.log(joinTanggalLahir(array));
-// console.log(menentukanNamaBulan(array));
-// console.log(membatasiNama15Char(array));
-// console.log('\n');
-// console.log(dataHandling2(array));
-// console.log(editData(array));
-// sortingTanggalLahir(array);
-
-
 /**
  * keluaran yang diharapkan (pada console)
  *
