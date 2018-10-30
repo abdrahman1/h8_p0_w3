@@ -4,12 +4,11 @@
  */
 
 
-var hello = 'hello world!';
 
 function balikString(string) {
     var tampung = '';
-    for (var i = hello.length-1; i>= 0; i--) {
-        tampung = tampung + hello[i];
+    for (var i = string.length-1; i>= 0; i--) {
+        tampung = tampung + string[i];
     }
     return tampung;
 }
