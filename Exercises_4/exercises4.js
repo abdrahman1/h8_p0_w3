@@ -5,22 +5,19 @@
 
 function dataHandling2(input) { // fungsi untuk menampilkan data hasil akhir
     var data = editData(input);
+    var data6 = data.slice(0,6);
     var bulan = menentukanNamaBulan(input);
-    var nama = membatasiNama15Char(input);
     var tanggalLahir = joinTanggalLahir(input);
-    console.log(data);
-    console.log(bulan);
-    console.log(sortingTanggalLahir(input));
-    console.log(tanggalLahir);
-    console.log(nama);
+    var tanggalLahirArr = sortTanggalLahir(input);
+    var nama = membatasiNama15Char(input);
+    return (data6+'\n'+bulan+'\n'+tanggalLahirArr+'\n'+tanggalLahir+'\n'+nama);
 }
 
 function editData(input) { // edit data pada array menggunakan splice()
     input.splice(1, 2, 'Roman Alamsyah Elsharawy', 'Provinsi Bandar Lampung');
-    input.splice(4, 0, 'Pria', 'SMA Internasional Metro');
+    // input.splice(4, 0, 'Pria', 'SMA Internasional Metro');
     input.splice(6, 1);
-    var cetak = input.slice(0, 6);
-    return cetak;
+    return input;
 }
 
 function splitTanggalLahir(input) {
@@ -29,10 +26,9 @@ function splitTanggalLahir(input) {
     return tanggalLahir;
 }
 
-function sortingTanggalLahir(input) {
+function sortTanggalLahir(input) {
     var tanggalLahir = splitTanggalLahir(input);
-    var sortTangalLahir = tanggalLahir.sort(function(a, b) {return a-b});
-    return sortTangalLahir;
+    return tanggalLahir.sort(function(a, b) {return a-b});
 }
 
 function joinTanggalLahir(input) {
@@ -93,8 +89,16 @@ function membatasiNama15Char(input) {
 }
 
 
-var array = ['0001', 'Roman Alamsyah', 'Bandar Lampung', '21/08/1989', 'Membaca'];
-dataHandling2(array);
+var array = ['0001', 'Roman Alamsyah', 'Bandar Lampung', '21/05/1989', 'Membaca'];
+
+// console.log(splitTanggalLahir(array));
+// console.log(sortTanggalLahir(array));
+// console.log(joinTanggalLahir(array));
+// console.log(menentukanNamaBulan(array));
+// console.log(membatasiNama15Char(array));
+// console.log('\n');
+console.log(dataHandling2(array));
+
 
 /**
  * keluaran yang diharapkan (pada console)
