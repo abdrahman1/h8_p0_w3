@@ -11,12 +11,6 @@ function cariMean(arr) {
         indexArr++;
     }
     var mean = Math.round(tampung / arr.length);
-    // if (mean % 2 !== 0) {
-    //     var meanRound = Math.round(mean);
-    //     return meanRound;   
-    // } else {
-    //     return mean;
-    // }
     return mean;
 }
 

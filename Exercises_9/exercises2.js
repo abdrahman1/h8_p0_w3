@@ -1,25 +1,16 @@
-/**
- * H8_P0_W3_E10
- * Perkalian Unik
- */
-
-function perKalianUnik(arr) {
-    var tampungKali = 1;
-    var hasilKaliArr = [];
-    for (var i = 0; i < arr.length; i++) {
-        for (var j = 0; i < arr[i].length; j++) {
-            if (j !== i) {
-                tampungKali *= Arr[j]; 
-            }
-            
-        }
-        hasilKaliArr.push(tampungKali);
-        
+function cariMean(arr) {
+    var tmpKali = 1;
+    for (var i=0; i<arr.length; i++) {
+        tmpKali += arr[i]
     }
-    return hasilKaliArr;
+    var mean = Math.round(tmpKali/arr.length);
+    return mean;
 }
-console.log(perkalianUnik([2, 4, 6])); // [24, 12, 8]
-console.log(perkalianUnik([1, 2, 3, 4, 5])); // [120, 60, 40, 30, 24]
-console.log(perkalianUnik([1, 4, 3, 2, 5])); // [120, 30, 40, 60, 24]
-console.log(perkalianUnik([1, 3, 3, 1])); // [9, 3, 3, 9]
-console.log(perkalianUnik([2, 1, 8, 10, 2])); // [160, 320, 40, 32, 160]
+
+
+// TEST CASES
+console.log(cariMean([1, 2, 3, 4, 5])); // 3
+console.log(cariMean([3, 5, 7, 5, 3])); // 5
+console.log(cariMean([6, 5, 4, 7, 3])); // 5
+console.log(cariMean([1, 3, 3])); // 2
+console.log(cariMean([7, 7, 7, 7, 7])); // 7

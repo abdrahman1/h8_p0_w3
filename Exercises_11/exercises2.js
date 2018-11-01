@@ -2,22 +2,14 @@ function tentukanDeretAritmatika(arr) {
     var tampil = '';
     var beda = arr[0] - arr[1];
     for (var i = 0; i < arr.length - 1; i++) {
-        // if (arr[i] - arr[i + 1] != beda) {
-        //     // counter++;
-        //     tampil += arr[i] - arr[i+1] + ' ' 
-        // } else {
-        //     tampil += arr[i] - arr[i+1] + ' '
-        // }
         if (i == arr.length-2) {
             tampil += arr[i+1] - arr[i];
         } else {
             tampil += arr[i+1] - arr[i] + ' ';
         }
     }
-    // return (counter === 0);
     var bedaArr = tampil.split(' ');
     return bedaArr;
-    // you can only write your code here!
 }
 
 // TEST CASES
