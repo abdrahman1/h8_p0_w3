@@ -1,6 +1,3 @@
-/**
- * H8_P0_W3_E7
- */
 function hitungJumlahKata(kalimat) {
     var tmpKata = [];
     var tmpKar = '';

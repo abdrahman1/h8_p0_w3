@@ -1,21 +1,15 @@
-/**
- * H8_P0_W3_E8
- * Pasangan Angka Terbesar
- */
-
 function pasanganTerbesar(num) {
     var numString = String(num);
-    var tampil = '';
-    var max = 0; // dua angka terbesar
+    var tmpMax = 0;
     for (var i = 0; i < numString.length; i++) {
-        if (numString[i]+numString[i+1] > max) {
-            max = numString[i]+numString[i+1];
-            // tampil += max + ' |'
+        if (numString[i]+numString[i+1] > tmpMax) {
+            tmpMax = numString[i]+numString[i+1];
         }
     }
-    return max;
-    // return max;
+    return tmpMax;
 }
+
+// TEST CASES
 console.log(pasanganTerbesar(641573)); // 73
 console.log(pasanganTerbesar(12783456)); // 83
 console.log(pasanganTerbesar(910233)); // 91
