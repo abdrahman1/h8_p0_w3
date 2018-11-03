@@ -1,23 +1,29 @@
-function angkaPalindrome(angka) {
-    var numString = String(angka);
-    var tmpAngka = '';
-    if (angka < 10) {
-        return angka + 1;
-    } else {
-        for (var i = 0; i < numString.length; i++) {
-            tmpAngka += numString[numString.length-1-i];
+function groupAnimals(animals) {
+    var groupAnimals = [];
+    var abjad = '';
+    for (var i = 0; i < animals.length; i++) {
+        var currentAnimals = animals[i];
+        var hurufPertama = currentAnimals[0];
+        var tempIndex = -1;
+        
+        for (var j = 0; j < abjad.length; j++) {
+            if (hurufPertama === abjad[j]) {
+                tempIndex = j;
+            }
         }
-        if (tmpAngka === numString) {
-            return angka;
+        
+        if (tempIndex === -1) {
+            abjad += hurufPertama;
+            groupAnimals.push([currentAnimals]);
         } else {
-            return angkaPalindrome(angka + 1);
+            groupAnimals[tempIndex].push(currentAnimals);
         }
     }
-
-
+    return groupAnimals.sort(function(a, b){return(b>a)});
 }
-console.log(angkaPalindrome(8)); // 9
-console.log(angkaPalindrome(10)); // 11
-console.log(angkaPalindrome(117)); // 121
-console.log(angkaPalindrome(175)); // 181
-console.log(angkaPalindrome(1000)); // 1001
+
+
+console.log(groupAnimals(['cacing', 'ayam', 'kuda', 'anoa', 'kancil']));
+// [ ['ayam', 'anoa'], ['cacing'], ['kuda', 'kancil'] ]
+console.log(groupAnimals(['cacing', 'ayam', 'kuda', 'anoa', 'kancil', 'unta', 'cicak' ]));
+// [ ['ayam', 'anoa'], ['cacing', 'cicak'], ['kuda'], ['unta'] ]

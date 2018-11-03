@@ -3,19 +3,32 @@
  * Mengelompokkan Hewan
  */
 
-// function groupAnimals(animals) {
-//     var hasil = [];
-//     var kamusHewan = '';
-//     var tampung = ''
-//     for (var i = 0; i < animals.length; i++) {
-//         var currentAnimal = animals[i];
-//         var hurufPertama = currentAnimal[0];
+function groupAnimals(animals) {
+    var hasil = [];
+    var abjad = '';
+    for (var i = 0; i < animals.length; i++) {
+        var currentAnimals = animals[i];
+        var hurufPertama = currentAnimals[0];
+        var tempIndex = -1;
         
-//     }
-//     return hurufPertama;
-// }
-// console.log(groupAnimals(['cacing', 'ayam', 'kuda', 'anoa', 'kancil']));
-var animal = ['cacing', 'ayam']
-var currentAnimal = animal[0];
-var hurufPertama = currentAnimal[0];
-console.log(hurufPertama);
+        for (var j = 0; j < abjad.length; j++) {
+            if (hurufPertama === abjad[j]) {
+                tempIndex = j;
+            }
+        }
+        
+        if (tempIndex === -1) {
+            abjad += hurufPertama;
+            hasil.push([currentAnimals]);
+        } else {
+            hasil[tempIndex].push(currentAnimals);
+        }
+    }
+    return hasil.sort(function(a, b){return(a>b)});
+}
+
+
+console.log(groupAnimals(['cacing', 'ayam', 'kuda', 'anoa', 'kancil']));
+// [ ['ayam', 'anoa'], ['cacing'], ['kuda', 'kancil'] ]
+console.log(groupAnimals(['cacing', 'ayam', 'kuda', 'anoa', 'kancil', 'unta', 'cicak' ]));
+// [ ['ayam', 'anoa'], ['cacing', 'cicak'], ['kuda'], ['unta'] ]

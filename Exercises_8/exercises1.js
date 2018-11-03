@@ -13,7 +13,7 @@ function pasanganTerbesar(num) {
             // tampil += max + ' |'
         }
     }
-    return max;
+    return Number(max);
     // return max;
 }
 console.log(pasanganTerbesar(641573)); // 73

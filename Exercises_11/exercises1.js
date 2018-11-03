@@ -5,7 +5,7 @@
 function tentukanDeretAritmatika(arr) {
     var isArit;
     for (var i = 0; i < arr.length - 2; i++) {
-        if (arr[i + 1] - arr[i] === arr[i + 2] - arr[i + 1]) {
+        if (arr[i + 1] - arr[i] === arr[i + 2] - arr[i + 1]){
             isArit = true;
         } else {
             return false;

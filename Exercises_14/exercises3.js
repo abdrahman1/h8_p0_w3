@@ -1,7 +1,3 @@
-/**
- * H8_P0_W3_E14
- */
-
 function mengelompokkanAngka(arr) {
     var groupAngka = [
         [],
@@ -10,11 +6,11 @@ function mengelompokkanAngka(arr) {
     ];
     for (var i = 0; i < arr.length; i++) {
         if (arr[i] % 3 === 0) {
-            groupAngka[2].push(arr[i]);
+            groupAngka[2][groupAngka[2].length] = arr[i];
         } else if (arr[i] % 2 === 0) {
-            groupAngka[0].push(arr[i]);
+            groupAngka[0][groupAngka[0].length] = arr[i];
         } else {
-            groupAngka[1].push(arr[i]);
+            groupAngka[1][groupAngka[1].length] = arr[i];
         }
     }
     return groupAngka;

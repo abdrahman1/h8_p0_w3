@@ -1,27 +1,25 @@
 function groupAnimals(animals) {
-    var hasil = [];
-    var kamusHewan = '';
-
-    for (var i = 0; i <animals.length; i++){
-        var currentAnimal = animals[i]
-        var hurufPertama = currentAnimal[0]
-        var indeksSementara = -1
-        for (var j = 0; j<kamusHewan.length; j++){
-            if(kamusHewan[j]===hurufPertama) {
-                indeksSementara = j
-            }
+    var groupHewan = []; // untuk menampung array dari array animals
+    var kamusHewan = ''; // untuk menampung abjad pertama di setiap element atau nilai di array animals
+    for (var i = 0; i < animals.length; i++) {
+        var currentAnimal = animals[i]; // nilai dari animal di setiap index[i] pada aray animal
+        var hurufPertama = currentAnimal[0]; // abjad pertama untuk setiap animal
+        var tempIndex = -1 // untuk acuan offset banding array hewan dan abjad hewan
+        for (j = 0; j < kamusHewan.length; j++) {
+            if (hurufPertama === kamusHewan[j]) {
+                tempIndex = j;
+            } 
         }
-        if (indeksSementara === -1) {
-            kamusHewan += hurufPertama
-            hasil.push([currentAnimal])
+        if (tempIndex === -1) { // kondisi jika indeks sementar masih -1
+            kamusHewan += hurufPertama; //menambah value kamus dengan hurufPertama
+            groupHewan.push([currentAnimal]) // menambah array groupHewan dengan currentAnimal yang di set menggunakan array bukan string
         } else {
-            hasil[indeksSementara].push(currentAnimal)
+            groupHewan[tempIndex].push(currentAnimal);
         }
-
     }
-    return hasil.sort(function(a,b){return a > b})
-    
+    return groupHewan.sort(function(a, b) {return a > b});
 }
+
 
 // TEST CASES
 console.log(groupAnimals(['cacing', 'ayam', 'kuda', 'anoa', 'kancil']));
