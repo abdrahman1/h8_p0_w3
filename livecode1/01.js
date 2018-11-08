@@ -78,17 +78,17 @@ var userLength = 5;
 var pesan;
 
 if (user.length >= 5) {
-  if (role == 'Author' || role ==  'author') {
+  if (role == 'Author' || role == 'author') {
     pesan = user + ', kamu adalah Author dan dapat mengakses \n-Home \n-Logout \n-Edit Article \n-Create Article \n-Edit Own Article \n-Delete Own Character';
   } else if (role == 'Editor' || role == 'editor') {
     pesan = user + ', kamu adalah Editor dan dapat mengakses \n-Home \n-Logout \n-Edit Article';
   } else {
-      pesan = 'anda non member, hanya dapat mengakses \n-home \n-logout';
-    }
-
+    pesan = 'anda non member, hanya dapat mengakses \n-home \n-logout';
+  }
   console.log(pesan);
+
 } else {
-  console.log('login failed; panjang karaketer kurang dari lima'); 
+  console.log('login failed; panjang karaketer kurang dari lima');
 }
 
 /**

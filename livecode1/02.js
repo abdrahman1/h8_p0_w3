@@ -35,7 +35,7 @@ Jika nilai mahasiswa kurang dari 0 atau lebih dari 100 maka tampilkan 'Nilai Inv
  */
 
 var nama = 'Usman';
-var nilai = -20;
+var nilai = 64;
 var desc;
 var ketNilai;
 if (nilai >= 80 && nilai <= 100) {
